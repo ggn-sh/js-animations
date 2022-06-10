@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .carousel__item {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 0 12px;
+            opacity: 0;
+            filter: drop-shadow(0 2px 2px #555);
+            will-change: transform, opacity;
+            -webkit-animation: carousel-animate-vertical 27s linear infinite;
+            animation: carousel-animate-vertical 27s linear infinite;
+        }
+        
+        .carousel__item:nth-child(1) {
+            -webkit-animation-delay: calc(3s * -1);
+            animation-delay: calc(3s * -1);
+        }
+        
+        .carousel__item:nth-child(2) {
+            -webkit-animation-delay: calc(3s * 0);
+            animation-delay: calc(3s * 0);
+        }
+        
+        .carousel__item:nth-child(3) {
+            -webkit-animation-delay: calc(3s * 1);
+            animation-delay: calc(3s * 1);
+        }
+        
+        .carousel__item:nth-child(4) {
+            -webkit-animation-delay: calc(3s * 2);
+            animation-delay: calc(3s * 2);
+        }
+        
+        .carousel__item:nth-child(5) {
+            -webkit-animation-delay: calc(3s * 3);
+            animation-delay: calc(3s * 3);
+        }
+        
+        .carousel__item:nth-child(6) {
+            -webkit-animation-delay: calc(3s * 4);
+            animation-delay: calc(3s * 4);
+        }
+        
+        .carousel__item:nth-child(7) {
+            -webkit-animation-delay: calc(3s * 5);
+            animation-delay: calc(3s * 5);
+        }
+        
+        .carousel__item:nth-child(8) {
+            -webkit-animation-delay: calc(3s * 6);
+            animation-delay: calc(3s * 6);
+        }
+        
+        .carousel__item:last-child {
+            -webkit-animation-delay: calc(-3s * 2);
+            animation-delay: calc(-3s * 2);
+        }
+        
+        .carousel__item-head {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            padding: 14px;
+            position: relative;
+            margin-right: -45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        
+        .carousel__item-body {
+            width: 100%;
+            border-radius: 8px;
+            padding: 16px 20px 16px 70px;
+        }
+        
+        .title {
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        
+        @-webkit-keyframes carousel-animate-vertical {
+            0% {
+                transform: translateY(100%) scale(0.5);
+                opacity: 0;
+                visibility: hidden;
+            }
+            3%,
+            11.1111111111% {
+                transform: translateY(100%) scale(0.7);
+                opacity: 0.4;
+                visibility: visible;
+            }
+            14.1111111111%,
+            22.2222222222% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+            25.2222222222%,
+            33.3333333333% {
+                transform: translateY(-100%) scale(0.7);
+                opacity: 0.4;
+                visibility: visible;
+            }
+            36.3333333333% {
+                transform: translateY(-100%) scale(0.5);
+                opacity: 0;
+                visibility: visible;
+            }
+            100% {
+                transform: translateY(-100%) scale(0.5);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        @keyframes carousel-animate-vertical {
+            0% {
+                transform: translateY(100%) scale(0.5);
+                opacity: 0;
+                visibility: hidden;
+            }
+            3%,
+            11.1111111111% {
+                transform: translateY(100%) scale(0.7);
+                opacity: 0.4;
+                visibility: visible;
+            }
+            14.1111111111%,
+            22.2222222222% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+            25.2222222222%,
+            33.3333333333% {
+                transform: translateY(-100%) scale(0.7);
+                opacity: 0.4;
+                visibility: visible;
+            }
+            36.3333333333% {
+                transform: translateY(-100%) scale(0.5);
+                opacity: 0;
+                visibility: visible;
+            }
+            100% {
+                transform: translateY(-100%) scale(0.5);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+
+    <title>Zilo - Homepage</title>
+</head>
+
+<body id="main-area">
+
+    <header>
+        <div class="header-sec">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-outer">
+                        <div class="logo-left">
+                            <a href="index.html"> <img src="assets/img/logo-img.png " alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="navbar-right">
+                            <div class="color-btn">
+                                <a href="">
+                                    <span><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.70996 12.3395C5.70996 11.7872 5.26225 11.3395 4.70996 11.3395H3.70996C3.15768 11.3395 2.70996 11.7872 2.70996 12.3395C2.70996 12.8918 3.15768 13.3395 3.70996 13.3395H4.70996C5.26225 13.3395 5.70996 12.8918 5.70996 12.3395ZM6.34996 17.3395L5.63996 18.0495C5.25224 18.4395 5.25224 19.0694 5.63996 19.4595C6.03 19.8472 6.65992 19.8472 7.04996 19.4595L7.75996 18.7495C8.09974 18.3527 8.07689 17.7613 7.70752 17.3919C7.33816 17.0225 6.74672 16.9997 6.34996 17.3395ZM12.71 5.33948C13.2622 5.33948 13.71 4.89176 13.71 4.33948V3.33948C13.71 2.78719 13.2622 2.33948 12.71 2.33948C12.1577 2.33948 11.71 2.78719 11.71 3.33948V4.33948C11.71 4.89176 12.1577 5.33948 12.71 5.33948ZM18.37 7.67948C18.6323 7.67837 18.8837 7.57422 19.07 7.38948L19.78 6.67948C20.0653 6.43509 20.1896 6.05136 20.1018 5.68606C20.0139 5.32076 19.7287 5.03554 19.3634 4.94767C18.9981 4.8598 18.6144 4.9841 18.37 5.26948L17.71 5.97948C17.3222 6.36951 17.3222 6.99944 17.71 7.38948C17.8863 7.56484 18.1216 7.66823 18.37 7.67948ZM6.36996 7.38948C6.55622 7.57422 6.80762 7.67837 7.06996 7.67948C7.33576 7.68101 7.59124 7.57666 7.77996 7.38948C8.16768 6.99944 8.16768 6.36951 7.77996 5.97948L7.06996 5.26948C6.81809 5.01403 6.44907 4.91236 6.10191 5.00277C5.75476 5.09317 5.4822 5.36192 5.38691 5.70777C5.29163 6.05362 5.38809 6.42403 5.63996 6.67948L6.36996 7.38948ZM21.71 11.3395H20.71C20.1577 11.3395 19.71 11.7872 19.71 12.3395C19.71 12.8918 20.1577 13.3395 20.71 13.3395H21.71C22.2622 13.3395 22.71 12.8918 22.71 12.3395C22.71 11.7872 22.2622 11.3395 21.71 11.3395ZM19.07 17.3395C18.6796 17.1224 18.1926 17.1904 17.8768 17.5063C17.5609 17.8221 17.4928 18.3091 17.71 18.6995L18.42 19.4095C18.81 19.7972 19.4399 19.7972 19.83 19.4095C20.2177 19.0194 20.2177 18.3895 19.83 17.9995L19.07 17.3395ZM12.71 6.83948C9.67239 6.83948 7.20996 9.30191 7.20996 12.3395C7.20996 15.377 9.67239 17.8395 12.71 17.8395C15.7475 17.8395 18.21 15.377 18.21 12.3395C18.2045 9.30419 15.7452 6.84498 12.71 6.83948ZM12.71 15.8395C11.2943 15.8395 10.0181 14.9867 9.47638 13.6789C8.93465 12.371 9.23409 10.8656 10.2351 9.8646C11.2361 8.86361 12.7415 8.56417 14.0494 9.1059C15.3572 9.64763 16.21 10.9239 16.21 12.3395C16.21 14.2725 14.643 15.8395 12.71 15.8395ZM12.71 19.3395C12.1577 19.3395 11.71 19.7872 11.71 20.3395V21.3395C11.71 21.8918 12.1577 22.3395 12.71 22.3395C13.2622 22.3395 13.71 21.8918 13.71 21.3395V20.3395C13.71 19.7872 13.2622 19.3395 12.71 19.3395Z"
+                        fill="white" />
+                    </svg>
+                    <span class="mob--none"> Light Mode</span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="menu-wrap">
+                                <input type="checkbox" class="toggler">
+                                <div class="hamburger">
+                                    <div></div>
+                                </div>
+                                <div class="menu">
+                                    <div>
+                                        <div>
+                                            <ul>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="work">
+        <div id="hero_con" class="tabcontent hero content1 custom-active">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="global-content" data-aos="fade-right" data-aos-duration="1000">
+                                <h2 class="hero-title">
+                                    <p class="text-light text-transformation">Revolutionising</p>
+                                    <p class="text-transformation">Global Fund</p>
+                                    <p class="text-light text-transformation">Administration</p>
+                                </h2>
+                                <div class="btn-circle">
+                                    <a href="#">About us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="video_con" class="tabcontent video content2 ">
+            <section>
+                <div class="container">
+                    <div class="row second-outer">
+                        <div class="col-lg-6 col-12">
+                            <div class="global-content" data-aos="fade-right" data-aos-duration="1000">
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Our mission is to reinvent the global</p>
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">asset & wealth management</p>
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">industry from back-to-front. We</p>
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">remove cost and complexity for</p>
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">customers by creating a frictionless</p>
+                                <p class="desc-30 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">cloud-based ecosystem</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 text-lg-end" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="text-md-center">
+                                <img src="assets/img/video.png" class="img-fluid " data-bs-toggle="modal" data-bs-target="#videoModal" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="service_con" class=" tabcontent service content3">
+            <section class="relative">
+                <img src="assets/img/shape.png" class="shape-animation" alt="">
+                <div class="container">
+                    <div class="row second-outer">
+
+                        <div class="col-lg-5 col-12 order-2 order-lg-1" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                            <div class="maning-div text-md-center">
+                                <img src="assets/img/man.png" class="img-fluid man-img" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 order-1 order-lg-2 " data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                            <div class="global-content position-40">
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Our Vision is for Zilo to deliver technology that not only</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">represents the future, but allows for the systematic</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">migration of the past.</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Where Asset Managers can focus on their investment</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">management process and transfer agents can undertake</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">distribution as part of a single globally connected</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">ecosystem without the need for multiple third parties</p>
+                                <p class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">intermediatingtransactional and settlement cycles.</p>
+                                <h4 class="desc-24 text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Philip Goffin</h4>
+                                <p class="profile text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Co-founder & Chief executive officer</p>
+                                <div class="btn-circle">
+                                    <a href="#">Our <br>
+                                        Services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="we-do_con" data-aos="fade-up" class="tabcontent we-do content4">
+            <section>
+                <div class="container">
+                    <div class="row second-outer justify-space-between">
+
+                        <div class="col-lg-5 col-12">
+                            <div class="global-content max-92">
+                                <h6 class="pb-5 title-34" data-aos="fade-right" data-aos-duration="800">
+                                    <p class="text-transformation" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">A single global view of fund distribution & transactions</p>
+                                </h6>
+                                <p class="desc-20 text-transformation" data-aos="fade-right" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Our technical architecture provides for a single,</p>
+                                <p class="desc-20 text-transformation" data-aos="fade-right" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);"></p>distributed, global codebase, and our system</p>
+                                <p class="desc-20 text-transformation" data-aos="fade-right" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">allows global users to see the market and their</p>
+                                <p class="desc-20 text-transformation" data-aos="fade-right" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);"></p> business flows operating in real time, with</p>
+                                <p class="desc-20 text-transformation" data-aos="fade-right" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">blockchain technology enabling one core register and book of record</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="bg-img text-md-center" data-aos="fade-left" data-aos-duration="1000">
+                                <img src="assets/img/dashborad-img.png" class="img-fluid dashborad-img" alt="">
+                                <img src="assets/img/circle-shape.png" class="circle-shape img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <div id="customers_con" class="tabcontent customers content5">
+            <section>
+                <div class="container">
+                    <div class="row second-outer">
+                        <div class="col-lg-9 col-12">
+                            <div class="global-content">
+                                <h6 class="pb-60 title-60 text-transformation" data-aos="fade-up" data-aos-duration="1000" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Big data utilisation provides enhanced levels of analysis and reporting
+                                </h6>
+                                <h6 class="pb-40 title-45 text-transformation" data-aos="fade-up" data-aos-duration="1200" style="opacity: 0; transform: translate3d(0px, -50px, 0px);">Who we serve</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb-md-3 pb-sm-0">
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn pink" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-aos="fade-up" data-aos-duration="1300">
+                <div>
+                  <h4 class="pb-3"> Distributors</h4>
+                  <p>Our seamless solutions allow for an improved simple on-boarding process for new
+                    customers, with
+                    real time views of all of your fund manager relationships. We provide a complete
+                    self-service
+                    solution for fund trading, settlement, reporting, and reconciliation</p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content pink">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#E77892" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="white" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Distributors</h4>
+                                            <p>Our seamless solutions allow for an improved simple on-boarding process for new customers, with real time views of all of your fund manager relationships. We provide a complete self-service solution for fund
+                                                trading, settlement, reporting, and reconciliation</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn purple" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-aos="fade-up" data-aos-duration="1300">
+                <div>
+                  <h4 class="pb-3"> Asset Managers</h4>
+                  <p>With real time visibility across all of your customers, our solutions bring you closer to the data
+                    to
+                    better inform commercial decisions in the management of funds</p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content purple">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#7e32d9" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="white" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Asset Managers</h4>
+                                            <p>With real time visibility across all of your customers, our solutions bring you closer to the data to better inform commercial decisions in the management of funds
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb-md-3 pb-sm-0">
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn blue" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-aos="fade-up" data-aos-duration="1500">
+                <div>
+                  <h4 class="pb-3"> Transfer Agents</h4>
+                  <p>ZIlo's TA solution provides a real time multi-level view across all asset management funds under
+                    administration. Our TA solution has automated the manual process that currently burden both the
+                    customer experience and the additional significant, unnecessary costs of back office administration
+                  </p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content blue">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#30c1ff" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="white" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Transfer Agents</h4>
+                                            <p>ZIlo's TA solution provides a real time multi-level view across all asset management funds under administration. Our TA solution has automated the manual process that currently burden both the customer experience
+                                                and the additional significant, unnecessary costs of back office administration
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn darkBlue" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-aos="fade-up" data-aos-duration="1500">
+                <div>
+                  <h4 class="pb-3"> Fund Accountants</h4>
+                  <p>Zilo provides a seamless automated interaction with your chosen service provider in an open
+                    architecture designed for speed, efficiency and accuracy</p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content darkBlue">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#273cbd" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="white" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Fund Accountants</h4>
+                                            <p>Zilo provides a seamless automated interaction with your chosen service provider in an open architecture designed for speed, efficiency and accuracy</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn green" data-bs-toggle="modal" data-bs-target="#exampleModal5" data-aos="fade-up" data-aos-duration="1700">
+                <div>
+                  <h4 class="pb-3"> Custodians</h4>
+                  <p>Zilo provides a seamless automated interaction with your chosen service provider in an open
+                    architecture designed for speed, efficiency and accuracy</p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content green">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#36ff9e" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="#000" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Custodians</h4>
+                                            <p>Zilo provides a seamless automated interaction with your chosen service provider in an open architecture designed for speed, efficiency and accuracy</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="card-btn cyan" data-bs-toggle="modal" data-bs-target="#exampleModal" data-aos="fade-up" data-aos-duration="1700">
+                <div>
+                  <h4 class="pb-3"> Retail Investors</h4>
+                  <p>Our solutions can provide you an entirely bespoke digital platform to drive existing customer
+                    engagement as well as new channels for fund distribution</p>
+                </div>
+              </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content cyan">
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <svg width="40" height="40" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="28.5573" cy="28.5573" r="28.5573" fill="#00c3c3" />
+                        <path
+                          d="M30.3635 28.557L39.5142 17.6493C39.6676 17.468 39.5386 17.1926 39.3015 17.1926H36.5197C36.3559 17.1926 36.199 17.2658 36.0909 17.3913L28.5438 26.3887L20.9966 17.3913C20.892 17.2658 20.7351 17.1926 20.5678 17.1926H17.786C17.5489 17.1926 17.42 17.468 17.5733 17.6493L26.7241 28.557L17.5733 39.4646C17.539 39.505 17.5169 39.5545 17.5098 39.607C17.5027 39.6596 17.5108 39.7131 17.5332 39.7612C17.5556 39.8092 17.5913 39.8499 17.6361 39.8783C17.6809 39.9067 17.733 39.9216 17.786 39.9213H20.5678C20.7317 39.9213 20.8885 39.8481 20.9966 39.7226L28.5438 30.7253L36.0909 39.7226C36.1955 39.8481 36.3524 39.9213 36.5197 39.9213H39.3015C39.5386 39.9213 39.6676 39.6459 39.5142 39.4646L30.3635 28.557Z"
+                          fill="#000" />
+                      </svg>
+                    </button>
+
+                                        <div class="modal-body">
+
+                                            <h4 class="pb-3"> Retail Investors</h4>
+                                            <p>Our solutions can provide you an entirely bespoke digital platform to drive existing customer engagement as well as new channels for fund distribution</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row shape-row">
+                        <div class="col-12">
+                            <img src="assets/img/shape.png" class="shape-animation-right img-fluid" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="modal-body" style="padding:0;">
+                    <iframe width="100%" src="https://www.youtube.com/embed/Rek0NWPCNOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/tab.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#toggle li').on('click', function() {
+                $(this).removeClass('open').addClass('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

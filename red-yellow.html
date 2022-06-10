@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<div id="clickme">
+    Click here
+</div>
+<img id="book" src="https://thumbs.dreamstime.com/b/mobile-satellite-dish-3742172.jpg" alt="" width="100" height="123">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // With the element initially shown, we can dim it slowly:
+    $("#clickme").click(function() {
+        $("#book").fadeTo("slow", 0.2);
+    });
+</script>
+<!-- <!DOCTYPE html>
 <html>
 <style>
     #container {
@@ -69,4 +80,4 @@
 
 </body>
 
-</html>
+</html> -->
