@@ -76,10 +76,6 @@ function wheelSlide(event) {
                     }, 500);
                 }
             });
-            mutationObserverOnHide.observe(parentEleHidingArea, { // Options for the observer (which mutations to observe)
-                subtree: true,
-                attributes: true,
-            });
         }
         //close muation observer for hide
 
